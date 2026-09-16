@@ -1,0 +1,42 @@
+[
+  {
+    "protocol": "aave_v2",
+    "provisional": false,
+    "prevalence": 8.323996583831802e-06,
+    "auprc": 0.00515921222626375,
+    "lift": 619.7998971173051,
+    "n_t_min": 0.0,
+    "n_t_max": 0.9999478896420299,
+    "episodes_detected": "2/2"
+  },
+  {
+    "protocol": "aave_v3",
+    "provisional": false,
+    "prevalence": 7.181565782424411e-06,
+    "auprc": 0.001770258571502929,
+    "lift": 246.50036289235393,
+    "n_t_min": 0.0,
+    "n_t_max": 0.9999342776453224,
+    "episodes_detected": "1/1"
+  },
+  {
+    "protocol": "compound_v2",
+    "provisional": true,
+    "prevalence": 0.00026067233149395716,
+    "auprc": 0.013295199834528608,
+    "lift": 51.00349453404422,
+    "n_t_min": 0.0,
+    "n_t_max": 0.9993198679327223,
+    "episodes_detected": "6/59"
+  },
+  {
+    "protocol": "maker",
+    "provisional": true,
+    "prevalence": 3.6152473055109925e-05,
+    "auprc": 0.008744887059731903,
+    "lift": 241.8890416265968,
+    "n_t_min": 0.0,
+    "n_t_max": 0.9994986077472091,
+    "episodes_detected": "2/8"
+  }
+]

@@ -1,0 +1,1448 @@
+{
+  "curves": [
+    {
+      "protocol": "aave_v2",
+      "rows": [
+        {
+          "threshold": 0.99,
+          "far_per_week": 3.936027289542456,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9901677966101695,
+          "far_per_week": 3.880746007385961,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9903355932203389,
+          "far_per_week": 3.8402064004711978,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9905033898305085,
+          "far_per_week": 3.7775542806938365,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.990671186440678,
+          "far_per_week": 3.69647506686431,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9908389830508475,
+          "far_per_week": 3.637508365897382,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9910067796610169,
+          "far_per_week": 3.54905831444699,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9911745762711864,
+          "far_per_week": 3.4864061946696285,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.991342372881356,
+          "far_per_week": 3.4384957501339994,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9915101694915254,
+          "far_per_week": 3.379529049167071,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9916779661016949,
+          "far_per_week": 3.331618604631442,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9918457627118644,
+          "far_per_week": 3.2394831343706167,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9920135593220339,
+          "far_per_week": 3.1952581086454206,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9921813559322034,
+          "far_per_week": 3.1620893393515237,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9923491525423729,
+          "far_per_week": 3.1031226383845953,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9925169491525424,
+          "far_per_week": 3.018358005744636,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9926847457627118,
+          "far_per_week": 2.9520204671568417,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9928525423728813,
+          "far_per_week": 2.8967391850003468,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9930203389830509,
+          "far_per_week": 2.8082891335499545,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9931881355932204,
+          "far_per_week": 2.7419515949621602,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9933559322033898,
+          "far_per_week": 2.646130705890902,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9935237288135593,
+          "far_per_week": 2.579793167303108,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9936915254237288,
+          "far_per_week": 2.5134556287153136,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9938593220338983,
+          "far_per_week": 2.4508035089379523,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9940271186440678,
+          "far_per_week": 2.3734097139188592,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9941949152542373,
+          "far_per_week": 2.340240944624962,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9943627118644068,
+          "far_per_week": 2.266532568416302,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9945305084745762,
+          "far_per_week": 2.2149367050702398,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9946983050847458,
+          "far_per_week": 2.1485991664824455,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9948661016949153,
+          "far_per_week": 2.067519952652919,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9950338983050847,
+          "far_per_week": 1.993811576444259,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9952016949152542,
+          "far_per_week": 1.9164177814251657,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9953694915254238,
+          "far_per_week": 1.8427094052165056,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9955372881355932,
+          "far_per_week": 1.7210905844722162,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9957050847457627,
+          "far_per_week": 1.625269695400958,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9958728813559322,
+          "far_per_week": 1.5736738320548957,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9960406779661017,
+          "far_per_week": 1.4962800370358025,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9962084745762712,
+          "far_per_week": 1.4520550113106063,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9963762711864407,
+          "far_per_week": 1.3930883103436782,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9965440677966102,
+          "far_per_week": 1.326750771755884,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9967118644067796,
+          "far_per_week": 1.2530423955472239,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9968796610169491,
+          "far_per_week": 1.2014465322011616,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9970474576271187,
+          "far_per_week": 1.1351089936133674,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9972152542372882,
+          "far_per_week": 1.0614006174047073,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9973830508474576,
+          "far_per_week": 0.9582088907125829,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9975508474576271,
+          "far_per_week": 0.8918713521247887,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9977186440677966,
+          "far_per_week": 0.8255338135369945,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9978864406779661,
+          "far_per_week": 0.7813087878117984,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9980542372881356,
+          "far_per_week": 0.7149712492240041,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9982220338983051,
+          "far_per_week": 0.6707462234988081,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9983898305084746,
+          "far_per_week": 0.6117795225318798,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.998557627118644,
+          "far_per_week": 0.5343857275127866,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9987254237288136,
+          "far_per_week": 0.49016070178759047,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9988932203389831,
+          "far_per_week": 0.3869689750954662,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999,
+          "far_per_week": 0.37959813747460014,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": true
+        },
+        {
+          "threshold": 0.9990610169491525,
+          "far_per_week": 0.346429368180703,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999228813559322,
+          "far_per_week": 0.2727209919720428,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9993966101694916,
+          "far_per_week": 0.17690010290078453,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9995644067796611,
+          "far_per_week": 0.10687714550255732,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9997322033898305,
+          "far_per_week": 0.02579793167303108,
+          "recall": 0.826530612244898,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999025384615384,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999905076923077,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999076153846154,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999101538461539,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999126923076923,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999152307692307,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999177692307692,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999203076923077,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999228461538462,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999253846153846,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999279230769231,
+          "far_per_week": 0.0036854188104330113,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999304615384615,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999933,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999355384615385,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999380769230769,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999406153846154,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999431538461538,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999456923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999482307692308,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999507692307692,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999533076923077,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999558461538461,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999583846153846,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999609230769231,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999634615384615,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999966,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999685384615384,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999710769230769,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999736153846154,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999761538461538,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999786923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999812307692307,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999837692307693,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999863076923077,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999888461538461,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999913846153846,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999993923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999964615384616,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999999,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        }
+      ]
+    },
+    {
+      "protocol": "aave_v3",
+      "rows": [
+        {
+          "threshold": 0.99,
+          "far_per_week": 4.230930908041853,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9901677966101695,
+          "far_per_week": 4.1624893786470585,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9903355932203389,
+          "far_per_week": 4.094047849252264,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9905033898305085,
+          "far_per_week": 4.050494148728304,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.990671186440678,
+          "far_per_week": 3.8513915177616282,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9908389830508475,
+          "far_per_week": 3.795393902802251,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9910067796610169,
+          "far_per_week": 3.7207304161897476,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9911745762711864,
+          "far_per_week": 3.6771767156657873,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.991342372881356,
+          "far_per_week": 3.633623015141827,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9915101694915254,
+          "far_per_week": 3.5776254001824497,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9916779661016949,
+          "far_per_week": 3.5589595285293236,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9918457627118644,
+          "far_per_week": 3.5154058280053633,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9920135593220339,
+          "far_per_week": 3.3847447264334827,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9921813559322034,
+          "far_per_week": 3.3349690686918136,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9923491525423729,
+          "far_per_week": 3.2603055820793103,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9925169491525424,
+          "far_per_week": 3.1918640526845157,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9926847457627118,
+          "far_per_week": 3.1047566516365954,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9928525423728813,
+          "far_per_week": 3.0425370794595095,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9930203389830509,
+          "far_per_week": 2.980317507282423,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9931881355932204,
+          "far_per_week": 2.924319892323046,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9933559322033898,
+          "far_per_week": 2.8745442345813768,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9935237288135593,
+          "far_per_week": 2.8434344484928338,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9936915254237288,
+          "far_per_week": 2.812324662404291,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9938593220338983,
+          "far_per_week": 2.7936587907511647,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9940271186440678,
+          "far_per_week": 2.7065513897032445,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9941949152542373,
+          "far_per_week": 2.619443988655324,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9943627118644068,
+          "far_per_week": 2.5323365876074035,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9945305084745762,
+          "far_per_week": 2.4327852721240655,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9946983050847458,
+          "far_per_week": 2.376787657164688,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9948661016949153,
+          "far_per_week": 2.333233956640728,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9950338983050847,
+          "far_per_week": 2.264792427245933,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9952016949152542,
+          "far_per_week": 2.177685026198013,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9953694915254238,
+          "far_per_week": 2.0843556679323836,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9955372881355932,
+          "far_per_week": 2.015914138537589,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9957050847457627,
+          "far_per_week": 1.9599165235782114,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9958728813559322,
+          "far_per_week": 1.9101408658365426,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9960406779661017,
+          "far_per_week": 1.8292554220063306,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9962084745762712,
+          "far_per_week": 1.7981456359177876,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9963762711864407,
+          "far_per_week": 1.7545919353938275,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9965440677966102,
+          "far_per_week": 1.7234821493052843,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9967118644067796,
+          "far_per_week": 1.6737064915636155,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9968796610169491,
+          "far_per_week": 1.586599090515695,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9970474576271187,
+          "far_per_week": 1.4683819033792314,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9972152542372882,
+          "far_per_week": 1.3812745023313109,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9973830508474576,
+          "far_per_week": 1.3377208018073508,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9975508474576271,
+          "far_per_week": 1.2443914435417216,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9977186440677966,
+          "far_per_week": 1.1821718713646354,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9978864406779661,
+          "far_per_week": 1.1137303419698408,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9980542372881356,
+          "far_per_week": 1.0390668553573374,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9982220338983051,
+          "far_per_week": 0.9395155398739998,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9983898305084746,
+          "far_per_week": 0.8710740104792051,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.998557627118644,
+          "far_per_week": 0.8275203099552448,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9987254237288136,
+          "far_per_week": 0.71552508003649,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9988932203389831,
+          "far_per_week": 0.6284176789885694,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9990610169491525,
+          "far_per_week": 0.5350883207229403,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999228813559322,
+          "far_per_week": 0.5039785346343972,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9993966101694916,
+          "far_per_week": 0.45420287689272837,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9995644067796611,
+          "far_per_week": 0.3235417753208476,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9997322033898305,
+          "far_per_week": 0.21776850261980127,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9998,
+          "far_per_week": 0.1617708876604238,
+          "recall": 1.0,
+          "recall_primary": 1.0,
+          "is_operating": true
+        },
+        {
+          "threshold": 0.9999,
+          "far_per_week": 0.031109786088543038,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999025384615384,
+          "far_per_week": 0.031109786088543038,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999905076923077,
+          "far_per_week": 0.024887828870834433,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999076153846154,
+          "far_per_week": 0.024887828870834433,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999101538461539,
+          "far_per_week": 0.024887828870834433,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999126923076923,
+          "far_per_week": 0.018665871653125825,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999152307692307,
+          "far_per_week": 0.018665871653125825,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999177692307692,
+          "far_per_week": 0.012443914435417217,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999203076923077,
+          "far_per_week": 0.012443914435417217,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999228461538462,
+          "far_per_week": 0.012443914435417217,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999253846153846,
+          "far_per_week": 0.006221957217708608,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999279230769231,
+          "far_per_week": 0.006221957217708608,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999304615384615,
+          "far_per_week": 0.0,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999933,
+          "far_per_week": 0.0,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999355384615385,
+          "far_per_week": 0.0,
+          "recall": 0.8,
+          "recall_primary": 1.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999380769230769,
+          "far_per_week": 0.0,
+          "recall": 0.26666666666666666,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999406153846154,
+          "far_per_week": 0.0,
+          "recall": 0.26666666666666666,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999431538461538,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999456923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999482307692308,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999507692307692,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999533076923077,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999558461538461,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999583846153846,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999609230769231,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999634615384615,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999966,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999685384615384,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999710769230769,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999736153846154,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999761538461538,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999786923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999812307692307,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999837692307693,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999863076923077,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999888461538461,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999913846153846,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999993923076923,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.9999964615384616,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        },
+        {
+          "threshold": 0.999999,
+          "far_per_week": 0.0,
+          "recall": 0.0,
+          "recall_primary": 0.0,
+          "is_operating": false
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "protocol": "aave_v2",
+      "name": "May 2021 crash",
+      "fire_block": 12464526,
+      "lead_start_min": 64.58333333333333,
+      "lead_half_min": 86.875,
+      "severity_usd": 77812431.17552555
+    },
+    {
+      "protocol": "aave_v2",
+      "name": "Jun 2022 (Terra/3AC)",
+      "fire_block": 14959160,
+      "lead_start_min": 6.875,
+      "lead_half_min": 26.25,
+      "severity_usd": 49378309.59151435
+    },
+    {
+      "protocol": "aave_v2",
+      "name": "Dec 2021 crash",
+      "fire_block": 13737921,
+      "lead_start_min": 10.208333333333334,
+      "lead_half_min": 23.333333333333332,
+      "severity_usd": 32713111.868608944
+    },
+    {
+      "protocol": "aave_v3",
+      "name": "Feb 2025 crash",
+      "fire_block": 21762811,
+      "lead_start_min": -1.4583333333333333,
+      "lead_half_min": 17.708333333333332,
+      "severity_usd": 146625088.84341192
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CascadeSignal — Live Cascade Monitor</title>
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a href="/" class="active">Live</a>
+  <a href="/historical.html">Historical</a>
+</nav>
+<div class="hero">
+  <div class="eyebrow">Live · Ethereum mainnet · read-only</div>
+  <h1>Cascade alarm, running now.</h1>
+  <div class="lede">The Hawkes branching-ratio <b>n(t)</b> alarm scoring live
+  liquidations. When n(t) approaches 1, liquidations are self-exciting — the
+  regime that precedes a cascade. See the <a href="/historical.html">Historical results →</a>
+  for how it fired ahead of the major cascades.</div>
+</div>
+<div class="live-controls">
+  <div class="seg seg-nt" id="live-nt-toggle">
+    <button data-zoom="full" class="active">n(t) 0–1</button>
+    <button data-zoom="zoom">Zoom</button>
+  </div>
+</div>
+<div id="grid" class="grid">
+  <div class="empty-note">Connecting to monitor…</div>
+</div>
+<footer id="footer"></footer>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/overlay.js"></script>
+<script src="js/cascades.js"></script>
+<script>
+const REFRESH_MS = 5000;
+let liveNtZoom = false;
+
+function stateClass(nt, threshold) {
+  if (nt == null) return "state-unknown";
+  if (threshold == null) return "state-unknown";
+  if (nt >= threshold) return "state-red";
+  if (nt >= threshold * 0.7) return "state-amber";
+  return "state-green";
+}
+
+function liquidationRows(rows, pending) {
+  if (!rows.length) {
+    return `<div class="empty-note">No liquidation events yet in range.</div>`;
+  }
+  const head = `<tr><th>block</th><th>tx</th><th>user</th><th>collateral</th><th>debt</th>${pending ? "<th></th>" : ""}</tr>`;
+  const body = rows.map(r => `
+    <tr>
+      <td>${fmtBlock(r.block_number)}</td>
+      <td>${shortHex(r.tx_hash)}</td>
+      <td>${shortHex(r.user)}</td>
+      <td>${shortHex(r.collateral_asset)}</td>
+      <td>${shortHex(r.debt_asset)}</td>
+      ${pending ? '<td><span class="badge pending">unconfirmed</span></td>' : ""}
+    </tr>`).join("");
+  return `<table>${head}${body}</table>`;
+}
+
+function render(data) {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  const protocols = Object.keys(data).sort();
+  if (!protocols.length) {
+    grid.innerHTML = `<div class="empty-note">No protocols reporting yet.</div>`;
+    return;
+  }
+  for (const proto of protocols) {
+    const s = data[proto];
+    const cls = stateClass(s.latest_n_t, s.threshold);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="proto-name">${proto}</span>
+        <span class="conn-label"><span class="dot ${s.connected ? "ok" : "bad"}"></span>${s.connected ? "connected" : "connecting…"}</span>
+      </div>
+      <div class="nt-banner ${cls}">
+        <span class="nt-value">n(t) = ${fmtNum(s.latest_n_t)}</span>
+        <span class="nt-thresh">${s.threshold != null ? `alert threshold ${fmtNum(s.threshold)}` : "no calibrated threshold — run scripts/live/calibrate_thresholds.py"}</span>
+        ${s.alert_active ? '<span class="badge live">ALERT ACTIVE</span>' : ""}
+      </div>
+      <div class="chart-wrap"><canvas class="ov"></canvas></div>
+      <div class="legend">
+        <span class="l-cost">Cumulative liquidations (#)</span>
+        <span class="l-nt">Branching ratio n(t)</span>
+        <span class="l-thr">Alarm threshold${s.threshold != null ? " (" + fmtNum(s.threshold, 3) + ")" : ""}</span>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="label">Finalized block</div><div class="value">${fmtBlock(s.finalized_block)}</div></div>
+        <div class="stat"><div class="label">Scored through</div><div class="value">${fmtBlock(s.scored_through_block)}</div></div>
+        <div class="stat"><div class="label">Alerts logged</div><div class="value">${s.alert_log.length}</div></div>
+      </div>
+      ${s.last_error ? `<div class="empty-note" style="color:var(--red)">error: ${s.last_error}</div>` : ""}
+      <details open>
+        <summary>Cascades detected this session (liquidation-clustering heuristic — click to open)</summary>
+        <div class="cascades-panel" data-protocol="${proto}"><div class="empty-note">Loading cascades…</div></div>
+      </details>
+      <details open>
+        <summary>Recent liquidations — pending (unconfirmed, live feed)</summary>
+        ${liquidationRows(s.pending_liquidations.slice(0, 15), true)}
+      </details>
+      <details>
+        <summary>Recent liquidations — confirmed (fed into scoring)</summary>
+        ${liquidationRows(s.confirmed_liquidations.slice(0, 15), false)}
+      </details>
+      <details>
+        <summary>Alert log</summary>
+        ${s.alert_log.length ? `<table>
+          <tr><th>fired_at</th><th>block</th><th>n(t)</th><th>threshold</th></tr>
+          ${s.alert_log.map(a => `<tr class="alert-row"><td>${a.fired_at}</td><td>${fmtBlock(a.block)}</td><td>${fmtNum(a.n_t)}</td><td>${fmtNum(a.threshold)}</td></tr>`).join("")}
+        </table>` : '<div class="empty-note">No alerts fired yet.</div>'}
+      </details>
+    `;
+    grid.appendChild(card);
+    const sh = s.score_history.slice(-180);
+    let acc = 0;
+    drawNtOverlay(card.querySelector(".ov"), {
+      xs: sh.map(b => b.end_block),
+      nts: sh.map(b => b.n_t),
+      left: sh.map(b => (acc += (b.n_liquidations || 0))),
+      threshold: s.threshold,
+      ntZoom: liveNtZoom,
+    });
+    renderCascadesPanel(card.querySelector(".cascades-panel"), proto);
+  }
+  document.getElementById("footer").textContent =
+    `Last updated ${new Date().toLocaleTimeString()} — auto-refreshing every ${REFRESH_MS / 1000}s. Read-only monitor: no signing, no writes.`;
+}
+
+async function tick() {
+  try {
+    const res = await fetch("/api/status");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    render(await res.json());
+  } catch (e) {
+    document.getElementById("footer").textContent = `Fetch failed: ${e}`;
+  }
+}
+
+document.querySelectorAll("#live-nt-toggle button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    liveNtZoom = btn.dataset.zoom === "zoom";
+    document.querySelectorAll("#live-nt-toggle button").forEach(b => b.classList.toggle("active", b === btn));
+    tick();
+  });
+});
+
+tick();
+setInterval(tick, REFRESH_MS);
+</script>
+</body>
+</html>

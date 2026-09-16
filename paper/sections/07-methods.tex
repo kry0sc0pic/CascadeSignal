@@ -1,0 +1,26 @@
+%=====================================================================
+% FLOW: Forecasting models. Serves: C2, C3. Uses: E2, E3, E4, E10.
+% Table: tab:models.
+%=====================================================================
+\section{Forecasting Models}\label{sec:methods}
+
+\subsection{Problem formalization}\label{sec:meth-problem}
+% P(cascade within h blocks) + severity head; targets and horizons.
+
+\subsection{Baselines (Tier 0)}\label{sec:meth-baselines}
+% B1-B7; B4 = position-level XGBoost aggregated (the RQ2 comparator).
+
+\subsection{Point-process models}\label{sec:meth-hawkes}
+% univariate -> multivariate -> multiplex-network Hawkes; branching ratio n(t).
+
+\subsection{Temporal graph neural network (Tier 1)}\label{sec:meth-gnn}
+% ST-GAT / EvolveGCN / ROLAND; graph-level readout; focal loss.
+
+\subsection{Tier-2 alternatives}\label{sec:meth-tier2}
+% continuous-time graph (TGN/TGAT/DyGFormer), neural TPP (EasyTPP), sequence (TFT/PatchTST/Mamba).
+
+\subsection{Severity and fusion models}\label{sec:meth-severity}
+% EVT peaks-over-threshold; Hawkes+GNN fusion; ensembles.
+
+\subsection{The RQ2 contrast}\label{sec:meth-rq2}
+% network (M2) vs aggregate-of-positions (B4): matched features, matched budget.

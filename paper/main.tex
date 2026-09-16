@@ -1,0 +1,130 @@
+%=====================================================================
+% CascadeSignal — Q1 journal paper (master file)
+%
+% Forecasting System-Level Liquidation Cascades in Decentralized
+% Lending with Contagion-Network Point Processes.
+%
+% This master file only sets up the document and \input{}s sections.
+% DO NOT write prose here. See paper/PAPER-OUTLINE.md for the full flow.
+%
+% Target (default): Journal of Financial Stability (Elsevier).
+% To switch to elsarticle: replace the \documentclass block below with
+%   \documentclass[review]{elsarticle}
+% and move the front matter into elsarticle's \begin{frontmatter}...\end{frontmatter}.
+%
+% Build:  latexmk -pdf main.tex     (or pdflatex x2 + bibtex)
+%=====================================================================
+\documentclass[11pt,a4paper]{article}
+
+%------------------------- packages ----------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+%------------------------- draft-note toggle -------------------------
+% \draftnotestrue  -> guidance/TODOs visible in the PDF (default while writing)
+% \draftnotesfalse -> camera-ready; all notes hidden
+\newif\ifdraftnotes
+\draftnotestrue
+
+\newcommand{\wnote}[1]{\ifdraftnotes{\textcolor{blue!70!black}{\small\,[\textbf{NOTE:} #1]}}\fi}
+\newcommand{\todoitem}[1]{\ifdraftnotes{\textcolor{red!80!black}{\small\,[\textbf{TODO:} #1]}}\fi}
+
+% Framed placeholder so the paper compiles before real figures exist.
+\newcommand{\figplaceholder}[2][0.75]{%
+  \fbox{\parbox[c][0.28\textheight][c]{#1\textwidth}{\centering\itshape
+  \textcolor{gray}{[figure placeholder]\\ #2}}}}
+
+%------------------------- notation macros ---------------------------
+\newcommand{\HF}{\mathrm{HF}}                 % health factor
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\intensity}{\lambda}              % point-process intensity
+\newcommand{\branch}{n}                       % branching ratio
+\newcommand{\horizon}{h}                       % forecast horizon (blocks)
+\newcommand{\cascade}{\mathcal{C}}
+\newcommand{\graph}{\mathcal{G}}
+\newcommand{\AUPRC}{\mathrm{AUPRC}}
+\newcommand{\USDprot}{\mathrm{USD}_{\text{prot}}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+
+%=====================================================================
+\begin{document}
+
+%------------------------- front matter ------------------------------
+\title{\textbf{CascadeSignal: Forecasting System-Level Liquidation
+Cascades in Decentralized Lending with Contagion-Network Point Processes}
+\\[4pt]\large\textcolor{gray}{\itshape working title --- see PAPER-OUTLINE.md}}
+
+\author{%
+  Krishaay Jois\thanks{Corresponding author.}\\
+  \small Mentor: Dr.\ Nilima Dongre\\
+  \small \todoitem{affiliation, emails, ORCID}}
+
+\date{\today}
+\maketitle
+
+%--- Highlights + graphical abstract (Elsevier front matter) ---------
+\input{sections/00-highlights.tex}
+
+%--- Abstract --------------------------------------------------------
+\input{sections/00-abstract.tex}
+
+\medskip
+\noindent\textbf{Keywords:} DeFi lending; liquidation cascades; systemic risk;
+contagion networks; Hawkes processes; temporal graph neural networks;
+early-warning signals; on-chain data.\\
+\noindent\textbf{JEL:} G17; G23; G32; C53; C58. \todoitem{confirm JEL set}
+
+\bigskip\hrule\bigskip
+
+%------------------------- body --------------------------------------
+\input{sections/01-introduction.tex}
+\input{sections/02-background.tex}
+\input{sections/03-related-work.tex}
+\input{sections/04-data.tex}
+\input{sections/05-cascade-definition.tex}
+\input{sections/06-features-graph.tex}
+\input{sections/07-methods.tex}
+\input{sections/08-experimental-design.tex}
+\input{sections/09-results.tex}
+\input{sections/10-causal-analysis.tex}
+\input{sections/11-discussion.tex}
+\input{sections/12-limitations.tex}
+\input{sections/13-conclusion.tex}
+
+%------------------------- back matter -------------------------------
+\section*{Declarations}
+\wnote{Elsevier structured declarations.}
+\paragraph{Data availability.} \todoitem{link to released benchmark + DVC hashes + DOI.}
+\paragraph{Code availability.} \todoitem{repository URL; \texttt{make e2e-sample} reproduces a CI slice.}
+\paragraph{Competing interests.} The authors declare no competing interests.
+\paragraph{CRediT author contributions.} \todoitem{fill CRediT taxonomy roles.}
+\paragraph{Funding.} \todoitem{state funding or ``no external funding''.}
+\paragraph{Acknowledgements.} \todoitem{mentor, data providers, compute.}
+
+%------------------------- bibliography -------------------------------
+\bibliographystyle{plainnat}
+\bibliography{bib/references}
+
+%------------------------- appendices --------------------------------
+\appendix
+\input{sections/99-appendix.tex}
+
+\end{document}

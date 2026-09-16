@@ -1,0 +1,20 @@
+%=====================================================================
+% FLOW: Evaluation protocol. Serves: C3, C4. Uses: all E.
+%=====================================================================
+\section{Experimental Design}\label{sec:eval}
+
+\subsection{Walk-forward protocol}\label{sec:eval-walkforward}
+% strict expanding-window, monthly retrain.
+
+\subsection{Episode hold-outs}\label{sec:eval-holdouts}
+% train pre-Terra/FTX/Oct'25/Feb'26; report per-episode separately.
+
+\subsection{Metrics}\label{sec:eval-metrics}
+% AUPRC (primary), recall@fixed-FAR, Brier/calibration, lead-time frontier,
+% severity quantile loss, economic USD protectable.
+
+\subsection{Statistical testing}\label{sec:eval-stats}
+% block bootstrap, Diebold-Mariano, >=5 seeds for deep models.
+
+\subsection{Compute budget}\label{sec:eval-compute}
+% budgeted comparisons; hyperparameter search disclosed (App. D).

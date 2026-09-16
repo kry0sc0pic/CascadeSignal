@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: lint + typecheck + tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (skip LFS blobs)
+        uses: actions/checkout@v4
+        with:
+          # The data lake (~274 MB) is Git LFS. Free-tier LFS bandwidth is
+          # ~1 GB/mo, so smudging it on every PR is not viable. The data-
+          # dependent tests (T1 integrity, T3 golden labels) skipif() when
+          # data/raw is absent, so this job gates code quality + all unit /
+          # hand-computed-fixture logic without pulling LFS. Full golden-data
+          # runs stay a local/manual gate (see CLAUDE.md + docs/episodes/).
+          lfs: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Sync dependencies
+        run: uv sync --all-groups
+
+      - name: ruff (lint)
+        run: uv run ruff check .
+
+      - name: black (format check)
+        run: uv run black --check .
+
+      - name: mypy (typecheck)
+        run: uv run mypy src tests scripts
+
+      - name: pytest (with coverage)
+        run: uv run pytest --cov=src/cascadesignal --cov-report=xml --cov-report=term
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+          retention-days: 30

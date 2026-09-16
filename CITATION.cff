@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use CascadeSignal, please cite this repository."
+title: "CascadeSignal"
+type: software
+authors:
+  - family-names: Jois
+    given-names: Krishaay
+  - family-names: Sengar
+    given-names: Abhyuday
+  - family-names: Parmar
+    given-names: Ansh
+abstract: "Forecasting liquidation cascades in DeFi lending systems."

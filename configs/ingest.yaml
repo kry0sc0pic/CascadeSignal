@@ -1,0 +1,62 @@
+study_period:
+  # Ethereum mainnet block ~Jan 1 2021 00:00 UTC
+  start_block: 11565019
+  # Ethereum mainnet block ~Feb 28 2026 23:59 UTC
+  end_block: 24560000
+
+dune:
+  # Number of blocks per Dune query execution. 500k blocks ≈ 2.5 months.
+  # Smaller = fewer rows per result, safer for free-tier result limits.
+  chunk_blocks: 500000
+  # Execution tier: medium (cheaper) or large (faster, costs more)
+  performance: medium
+
+paths:
+  raw: data/raw
+  checkpoints: data/raw/.checkpoints
+
+protocols:
+  # chain_id 1 = Ethereum mainnet
+  aave_v3:
+    chain_id: 1
+    # arXiv dataset coverage: deployment (Nov 2021) → Oct 2025
+    # We extend from Jan 2021 using Dune if Zenodo dataset not available
+    arxiv_start_block: 12686786  # Aave v3 Ethereum deploy block (Jan 2022)
+  aave_v2:
+    chain_id: 1
+    deploy_block: 11362579  # Aave v2 Ethereum deploy block (Dec 2020)
+  compound_v2:
+    chain_id: 1
+    deploy_block: 7710671  # Compound v2 Ethereum deploy block (May 2019)
+  compound_v3:
+    chain_id: 1
+    deploy_block: 15331586  # Compound v3 Ethereum deploy block (Aug 2022)
+  maker:
+    chain_id: 1
+    deploy_block: 8928152  # MakerDAO MCD deploy block (Nov 2019)
+
+# Golden cascade episodes — must be fully present for T3 test
+golden_episodes:
+  - name: "China crackdown"
+    start_block: 12400000
+    end_block: 12550000
+  - name: "Terra/LUNA"
+    start_block: 14700000
+    end_block: 15000000
+  - name: "FTX"
+    start_block: 15900000
+    end_block: 16000000
+  - name: "Oct 2025 flash deleveraging"
+    # 2025-10-08 -> 2025-10-13 (dossier window), verified via live
+    # eth_getBlockByNumber binary search on 2026-07-14. The block ranges
+    # below (~21.25-21.3M) previously used here resolved to 2024-11-23 ->
+    # 2024-11-29, ~a year off -- see source_status.md's block-range
+    # miscalibration writeup.
+    start_block: 23525000
+    end_block: 23575000
+  - name: "Feb 2026 Fed-nomination cascade"
+    # 2026-01-29 -> 2026-02-06 (dossier window), verified via live
+    # eth_getBlockByNumber binary search on 2026-07-14. Same miscalibration
+    # as above (previously resolved to 2025-02-01 -> 2025-02-15).
+    start_block: 24330000
+    end_block: 24405000

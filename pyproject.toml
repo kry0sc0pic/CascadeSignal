@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cascadesignal"
+version = "0.1.0"
+description = "Forecasting liquidation cascades in DeFi lending."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+  { name = "Krishaay Jois" },
+  { name = "Abhyuday Sengar"},
+  { name = "Ansh Parmar"}
+]
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=16.0",
+    "requests>=2.31",
+    "dune-client>=1.7",
+    "tqdm>=4.66",
+    "pyyaml>=6.0",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "networkx>=3.3",
+    "websockets>=17.0.1",
+    "fastapi>=0.141.1",
+    "uvicorn>=0.52.1",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.0,<9",
+  "pytest-cov>=5.0",
+  "pre-commit>=3.7",
+  "ruff>=0.6",
+  "black>=24.4",
+  "mypy>=1.10",
+  "pandas-stubs>=2.2",
+  "types-PyYAML>=6.0",
+  "types-networkx>=3.3",
+]
+
+[tool.pytest.ini_options]
+markers = [
+  "t2_gate: T2 state-reconstruction correctness gate (CAS-28) -- enforces the >2% HF-at-trigger mismatch threshold (as redefined by ADR-005's tolerance band, HF_TOLERANCE=0.01) against real data. Now PASSING (1.093% tolerance-band rate; see t2_gate.py's module docstring and ADR-005). Still excluded from the default run since it needs the LFS-pulled data lake and takes ~1 min against real data -- run explicitly with `pytest -m t2_gate` to check current gate status.",
+]
+addopts = "-m 'not t2_gate'"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cascadesignal"]
+
+[[tool.mypy.overrides]]
+module = "matplotlib.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "scipy.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sklearn.*"
+ignore_missing_imports = true

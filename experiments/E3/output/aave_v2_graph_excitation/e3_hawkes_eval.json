@@ -1,0 +1,88 @@
+{
+  "protocol": "aave_v2",
+  "bar_blocks": 5,
+  "graph_baseline": true,
+  "graph_mode": "excitation",
+  "graph_cov_coef": 0.0006977347638873574,
+  "degenerate_severity_gate": false,
+  "blocks_per_week": 48232.94736887328,
+  "n_t_range": [
+    0.0,
+    0.99995361566687
+  ],
+  "reports": [
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 2402692,
+      "n_positive": 20,
+      "prevalence": 8.323996583831802e-06,
+      "auprc": 0.006223941213131601,
+      "auprc_lift_over_prevalence": 747.7106880630797,
+      "n_episodes_in_range": 2,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 50,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 50
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 2402692,
+      "n_positive": 40,
+      "prevalence": 1.6647993167663604e-05,
+      "auprc": 0.006033877964559767,
+      "auprc_lift_over_prevalence": 362.4387578606009,
+      "n_episodes_in_range": 2,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 100,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 100
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 2402692,
+      "n_positive": 120,
+      "prevalence": 4.9943979502990815e-05,
+      "auprc": 0.0037549597183130275,
+      "auprc_lift_over_prevalence": 75.1834306292747,
+      "n_episodes_in_range": 2,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 300,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 300
+    }
+  ],
+  "per_episode": [
+    {
+      "episode": "2021-12-04",
+      "start_block": 13737970,
+      "start_time": "2021-12-04 05:14",
+      "detected": true,
+      "lead_blocks_achieved": 19
+    },
+    {
+      "episode": "terra",
+      "start_block": 14959193,
+      "start_time": "2022-06-14 01:40",
+      "detected": true,
+      "lead_blocks_achieved": 32
+    }
+  ]
+}

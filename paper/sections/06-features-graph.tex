@@ -1,0 +1,21 @@
+%=====================================================================
+% FLOW: Features & contagion graph. Serves: C2. Uses: E5, E8.
+% Figure: fig:graph.
+%=====================================================================
+\section{Features and Contagion Graph}\label{sec:features}
+
+\subsection{Feature bars}\label{sec:feat-bars}
+% liquidation wall, HF distribution, HHI, oracle-DEX gaps, DEX depth,
+% utilization/rates, event-history decays, gas, ETH/BTC vol.
+
+\subsection{Mempool and exogenous covariates}\label{sec:feat-exog}
+% pending-liquidation intent (Aug 2023+); CEX liquidations; TVL flows.
+
+\subsection{Critical-slowing-down indicators}\label{sec:feat-csd}
+% rising autocorrelation/variance of liquidation intensity (also baseline B7).
+
+\subsection{Heterogeneous contagion graph}\label{sec:feat-graph}
+% nodes (position buckets, whales, assets, pools, protocols); channel-tagged edges.
+
+\subsection{Snapshot cadence and leakage controls}\label{sec:feat-snapshots}
+% snapshots every 25 blocks (5 in stress); feature-timestamp audit.

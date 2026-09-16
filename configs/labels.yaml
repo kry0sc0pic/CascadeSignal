@@ -1,0 +1,23 @@
+# D-A cascade labeler grid (CAS-16), fixed by ADR-001.
+# docs/decisions/ADR-001-cascade-definition.md is the source of truth —
+# changing values here without a superseding ADR breaks pre-registration.
+
+definition: D-A
+generation_lag_blocks: 20
+
+grid:
+  w: [50, 100, 300]
+  k: [5, 10, 20]
+  theta:
+    p99: 99.0
+    p99.5: 99.5
+    p99.9: 99.9
+
+primary:
+  w: 100
+  k: 10
+  theta: p99.5
+
+# Mock 1 scope: Aave v3 core events deferred, so labeling runs on Aave v2 only.
+protocols:
+  - aave_v2

@@ -1,0 +1,10 @@
+project:
+  name: CascadeSignal
+  package: cascadesignal
+
+data:
+  root: data
+  raw: data/raw
+  curated: data/curated
+  features: data/features
+  benchmark: data/benchmark

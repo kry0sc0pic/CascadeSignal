@@ -1,0 +1,28 @@
+%=====================================================================
+% FLOW: ABSTRACT (~200-230 words). Structured but unlabeled.
+% Beats: (1) problem+stakes; (2) gap/question RQ2; (3) data+method;
+%        (4) headline result (frontier + RQ2 sign + economic USD);
+%        (5) contribution/benchmark. Write near-last; keep every number sourced.
+%=====================================================================
+\begin{abstract}
+\noindent
+\wnote{one paragraph, no citations, no undefined acronyms}
+Liquidation cascades are the systemic-risk analogue of decentralized (DeFi)
+lending: a price move forces collateral sales that push prices further, forcing
+more liquidations. \todoitem{1 sentence on scale/recurrence — five episodes,
+\$$\sim$X liquidated.} We ask whether such cascades can be \emph{forecast}
+ahead of time, and in particular whether modeling the \emph{contagion network}
+between positions, collateral assets, and venues carries predictive information
+beyond aggregating independent position risks (RQ2).
+We assemble \todoitem{the largest labeled cascade dataset for DeFi lending}
+(Aave, Compound, Maker, and modular markets; Ethereum 2021--Feb 2026; five
+systemic episodes, two with mempool coverage), reconstruct position health
+factors, and adopt a \emph{pre-registered} cascade definition reconciled to
+protocol-published statistics. We couple multiplex-network Hawkes processes with
+temporal graph neural networks to produce calibrated $\Prob(\text{cascade within
+}\horizon\text{ blocks})$ and severity, and evaluate under strict expanding-window
+walk-forward with episode hold-outs.
+\todoitem{Headline: network vs.\ aggregate AUPRC gain (or null) with block-bootstrap
+CI; lead-time--precision frontier; \$$X$M protectable at $\langle h\rangle$-block
+lead time.} We release the dataset, labels, and code as an open benchmark.
+\end{abstract}
