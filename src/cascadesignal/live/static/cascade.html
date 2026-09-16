@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CascadeSignal — Cascade detail</title>
+<link rel="stylesheet" href="css/app.css" />
+<style>
+  /* replay-specific bits not in the shared theme */
+  .panels { display: flex; flex-direction: column; gap: 18px; }
+  h1 { font-size: 22px; margin: 8px 0 4px; font-weight: 800; letter-spacing: -0.01em; }
+  tr.replay-current { outline: 2px solid var(--accent); }
+  tr.replay-past { opacity: 0.45; }
+  tr.replay-future { opacity: 1; }
+  .replay-controls { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .replay-controls button {
+    background: var(--border); color: var(--text); border: none; border-radius: 8px;
+    padding: 7px 14px; cursor: pointer; font-size: 12px;
+  }
+  .replay-controls button:hover { background: var(--accent); color: #fff; }
+  .replay-controls input[type=range] { flex: 1; }
+  .replay-controls .step-label { font-family: var(--mono); font-size: 12px; color: var(--dim); min-width: 90px; text-align: right; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a href="/">Live</a>
+  <a href="/historical.html">Historical</a>
+</nav>
+<div class="hero">
+  <a class="back" href="/">← back to live monitor</a>
+  <h1 id="title">Cascade detail</h1>
+  <div class="empty-note" id="subtitle"></div>
+</div>
+
+<div class="banner" id="banner"></div>
+
+<div class="panels" id="panels">
+  <div class="empty-note">Loading…</div>
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/cascade_detail.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+loadCascadeDetail(params.get("protocol"), params.get("id"));
+</script>
+</body>
+</html>

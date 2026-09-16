@@ -1,0 +1,37 @@
+node_modules/
+.venv/
+venv/
+__pycache__/
+.env
+*.pyc
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+
+# Data lake — kept on Google Drive; too large for GitHub (tracked via LFS in old history)
+data/
+
+# Experiments — exploratory outputs, not part of the published codebase
+experiments/trading/
+
+# Internal reports — mini-project dissertation, not for public release
+mp_report/
+
+# LaTeX scratch artifacts
+texput.log
+
+# Presentation/deck figures (internal; regenerate with mock2/build_*.py)
+mock2/
+
+# Paper LaTeX source — not for public release (paper/figures/ kept; README links to PNGs)
+paper/main.tex
+paper/sections/
+paper/bib/
+paper/tables/
+paper/PAPER-OUTLINE.md
+
+# Presentations — not for public release
+presentations/
+
+# Internal docs (ADRs, episode write-ups) — not for public release
+docs/

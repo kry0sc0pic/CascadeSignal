@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import uvicorn, fastapi; print\\('deps ok'\\)\")",
+      "Bash(uv run *)",
+      "Bash(lsof -iTCP:8000 -sTCP:LISTEN)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "notion"
+  ],
+  "disabledMcpjsonServers": [
+    "notion"
+  ]
+}

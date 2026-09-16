@@ -1,0 +1,81 @@
+{
+  "protocol": "aave_v3",
+  "bar_blocks": 5,
+  "graph_baseline": false,
+  "graph_mode": null,
+  "graph_cov_coef": null,
+  "degenerate_severity_gate": false,
+  "blocks_per_week": 50000.4507901805,
+  "n_t_range": [
+    0.0,
+    0.9999342776453224
+  ],
+  "reports": [
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 1392454,
+      "n_positive": 10,
+      "prevalence": 7.181565782424411e-06,
+      "auprc": 0.001770258571502929,
+      "auprc_lift_over_prevalence": 246.50036289235393,
+      "n_episodes_in_range": 1,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 50,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 50
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 1392454,
+      "n_positive": 20,
+      "prevalence": 1.4363131564848821e-05,
+      "auprc": 0.0024089538405575404,
+      "auprc_lift_over_prevalence": 167.71787055498547,
+      "n_episodes_in_range": 1,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 100,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 100
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 1392454,
+      "n_positive": 60,
+      "prevalence": 4.308939469454646e-05,
+      "auprc": 0.0026035490172329544,
+      "auprc_lift_over_prevalence": 60.42203738736827,
+      "n_episodes_in_range": 1,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 300,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 300
+    }
+  ],
+  "per_episode": [
+    {
+      "episode": "2025-02-03",
+      "start_block": 21762804,
+      "start_time": "2025-02-03 01:48",
+      "detected": true,
+      "lead_blocks_achieved": 6
+    }
+  ]
+}

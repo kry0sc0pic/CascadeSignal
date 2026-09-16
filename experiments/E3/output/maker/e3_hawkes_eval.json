@@ -1,0 +1,130 @@
+{
+  "protocol": "maker",
+  "bar_blocks": 25,
+  "graph_baseline": false,
+  "graph_mode": null,
+  "graph_cov_coef": null,
+  "degenerate_severity_gate": true,
+  "blocks_per_week": 48410.341726939376,
+  "n_t_range": [
+    0.0,
+    0.9994986077472091
+  ],
+  "reports": [
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 442570,
+      "n_positive": 16,
+      "prevalence": 3.6152473055109925e-05,
+      "auprc": 0.008744887059731903,
+      "auprc_lift_over_prevalence": 241.8890416265968,
+      "n_episodes_in_range": 8,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 50,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 50
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 442570,
+      "n_positive": 32,
+      "prevalence": 7.230494611021985e-05,
+      "auprc": 0.014822099544437776,
+      "auprc_lift_over_prevalence": 204.9942686056821,
+      "n_episodes_in_range": 8,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 100,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 100
+    },
+    {
+      "baseline": "Hawkes n(t)",
+      "n_scored": 442570,
+      "n_positive": 96,
+      "prevalence": 0.00021691483833065955,
+      "auprc": 0.02921110400341651,
+      "auprc_lift_over_prevalence": 134.6662322790838,
+      "n_episodes_in_range": 8,
+      "lead_time_frontier": [
+        {
+          "lead_blocks": 300,
+          "feasible": false,
+          "best_recall": null,
+          "precision_at_best_recall": null
+        }
+      ],
+      "max_feasible_lead_blocks": null,
+      "horizon_blocks": 300
+    }
+  ],
+  "per_episode": [
+    {
+      "episode": "2022-01-21",
+      "start_block": 14051846,
+      "start_time": "2022-01-21 23:27",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "2022-01-22",
+      "start_block": 14055004,
+      "start_time": "2022-01-22 11:00",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "2022-01-24",
+      "start_block": 14068197,
+      "start_time": "2022-01-24 12:00",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "terra",
+      "start_block": 14759408,
+      "start_time": "2022-05-12 06:00",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "terra",
+      "start_block": 14759935,
+      "start_time": "2022-05-12 08:00",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "2022-12-06",
+      "start_block": 16127025,
+      "start_time": "2022-12-06 16:44",
+      "detected": true,
+      "lead_blocks_achieved": 40.0
+    },
+    {
+      "episode": "2022-12-06",
+      "start_block": 16127340,
+      "start_time": "2022-12-06 17:47",
+      "detected": false,
+      "lead_blocks_achieved": NaN
+    },
+    {
+      "episode": "2023-03-13",
+      "start_block": 16820561,
+      "start_time": "2023-03-13 17:30",
+      "detected": true,
+      "lead_blocks_achieved": 26.0
+    }
+  ]
+}

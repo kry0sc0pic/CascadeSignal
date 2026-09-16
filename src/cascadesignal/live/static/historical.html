@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CascadeSignal — Historical Cascades</title>
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a href="/">Live</a>
+    <a href="/historical.html" class="active">Historical</a>
+  </nav>
+  <div id="root"><div class="empty-note">Loading…</div></div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/historical.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const id = params.get("id");
+if (id) renderHistoricalDetail(document.getElementById("root"), id);
+else renderHistoricalList(document.getElementById("root"));
+</script>
+</body>
+</html>
