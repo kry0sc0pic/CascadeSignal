@@ -1,4 +1,4 @@
-def test_package_imports() -> None:
-    import cascadesignal
+def test_package_imports -> None:
+ import cascadesignal
 
-    assert cascadesignal is not None
+ assert cascadesignal is not None

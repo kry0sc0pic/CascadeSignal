@@ -33,63 +33,63 @@ DEFAULT_MIN_CLUSTER_SIZE = 5
 
 @dataclass
 class ClusterState:
-    """The currently-open (in-progress) cluster, carried across calls."""
+ """The currently-open (in-progress) cluster, carried across calls."""
 
-    start_block: int | None = None
-    last_block: int | None = None
-    count: int = 0
+ start_block: int | None = None
+ last_block: int | None = None
+ count: int = 0
 
-    def is_open(self) -> bool:
-        return self.start_block is not None
+ def is_open(self) -> bool:
+ return self.start_block is not None
 
 
 @dataclass
 class ClosedCluster:
-    start_block: int
-    end_block: int
-    n_liquidations: int
+ start_block: int
+ end_block: int
+ n_liquidations: int
 
 
 def update_cluster(
-    state: ClusterState,
-    new_blocks: np.ndarray,
-    gap_blocks: int = DEFAULT_CLUSTER_GAP_BLOCKS,
-    min_cluster_size: int = DEFAULT_MIN_CLUSTER_SIZE,
+ state: ClusterState,
+ new_blocks: np.ndarray,
+ gap_blocks: int = DEFAULT_CLUSTER_GAP_BLOCKS,
+ min_cluster_size: int = DEFAULT_MIN_CLUSTER_SIZE,
 ) -> tuple[ClusterState, list[ClosedCluster]]:
-    """Fold newly-confirmed liquidation block numbers into the open cluster,
-    closing (and emitting) it whenever a gap > `gap_blocks` is crossed.
+ """Fold newly-confirmed liquidation block numbers into the open cluster,
+ closing (and emitting) it whenever a gap > `gap_blocks` is crossed.
 
-    `new_blocks` must be sorted ascending (the caller's confirmed-liquidation
-    feed already is). Returns the updated state and zero or more closed
-    clusters that reached `min_cluster_size` -- smaller gaps are dropped
-    silently, not surfaced as noise. A cluster still open at the end of
-    `new_blocks` stays open in the returned state for the next call.
-    """
-    closed: list[ClosedCluster] = []
-    for block in np.sort(new_blocks).tolist():
-        block = int(block)
-        if state.is_open() and block - state.last_block > gap_blocks:
-            if state.count >= min_cluster_size:
-                closed.append(
-                    ClosedCluster(
-                        start_block=state.start_block,
-                        end_block=state.last_block,
-                        n_liquidations=state.count,
-                    )
-                )
-            state = ClusterState()
-        if not state.is_open():
-            state = ClusterState(start_block=block, last_block=block, count=1)
-        else:
-            state.last_block = block
-            state.count += 1
-    return state, closed
+ `new_blocks` must be sorted ascending (the caller's confirmed-liquidation
+ feed already is). Returns the updated state and zero or more closed
+ clusters that reached `min_cluster_size` -- smaller gaps are dropped
+ silently, not surfaced as noise. A cluster still open at the end of
+ `new_blocks` stays open in the returned state for the next call.
+ """
+ closed: list[ClosedCluster] = []
+ for block in np.sort(new_blocks).tolist:
+ block = int(block)
+ if state.is_open and block - state.last_block > gap_blocks:
+ if state.count >= min_cluster_size:
+ closed.append(
+ ClosedCluster(
+ start_block=state.start_block,
+ end_block=state.last_block,
+ n_liquidations=state.count,
+ )
+ )
+ state = ClusterState
+ if not state.is_open:
+ state = ClusterState(start_block=block, last_block=block, count=1)
+ else:
+ state.last_block = block
+ state.count += 1
+ return state, closed
 
 
 __all__ = [
-    "DEFAULT_CLUSTER_GAP_BLOCKS",
-    "DEFAULT_MIN_CLUSTER_SIZE",
-    "ClusterState",
-    "ClosedCluster",
-    "update_cluster",
+ "DEFAULT_CLUSTER_GAP_BLOCKS",
+ "DEFAULT_MIN_CLUSTER_SIZE",
+ "ClusterState",
+ "ClosedCluster",
+ "update_cluster",
 ]
