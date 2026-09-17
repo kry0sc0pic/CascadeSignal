@@ -1,8 +1,8 @@
-"""Pull Aave v2 per-reserve collateral-toggle events (CAS-28, Track B).
+"""Pull Aave v2 per-reserve collateral-toggle events (Track B).
 
 Investigated as Track B's leading candidate for the T2 gate's dominant
 `unexplained` mismatch bucket (8,657 events, Chainlink-confirmed HF>=1 at
-trigger -- see the CAS-28 ticket's 2026-07-19 next-steps plan).
+trigger -- see the ticket's 2026-07-19 next-steps plan).
 `state.engine`'s docstring has flagged this simplification since it was
 written: every `Deposit` is currently treated as collateral-eligible
 unconditionally, but Aave v2 lets a user hold a reserve balance *without* it
@@ -11,8 +11,8 @@ counting toward their health factor -- either via a direct
 implicitly whenever a reserve balance is fully withdrawn (auto-re-enabled on
 the next fresh deposit). Both paths emit one of:
 
-    event ReserveUsedAsCollateralEnabled(address indexed reserve, address indexed user);
-    event ReserveUsedAsCollateralDisabled(address indexed reserve, address indexed user);
+ event ReserveUsedAsCollateralEnabled(address indexed reserve, address indexed user);
+ event ReserveUsedAsCollateralDisabled(address indexed reserve, address indexed user);
 
 directly on the `LendingPool` contract (`0x7d2768de...`, the same contract
 `fix_gateway_onbehalfof.py` pulls `Deposit`/`Borrow` from). Both fields are
@@ -39,9 +39,9 @@ Pull mechanics: identical chunked single-contract `getLogs` pattern to
 `data/raw/.checkpoints/` for resumable progress).
 
 Usage:
-    python scripts/onchain/backfill_collateral_toggle.py
+ python scripts/onchain/backfill_collateral_toggle.py
 Writes `data/raw/corrections/aave_v2_collateral_toggle/chain=1/collateral_toggle.parquet`
-(user, reserve, block_number, log_index, enabled) --
+(user, reserve, block_number, log_index, enabled)
 `cascadesignal.state.engine.PositionStateEngine` applies it automatically on
 every future load if the file exists.
 """
@@ -56,9 +56,9 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve.parent))
 
-from fetch_svr_feed_events import get_logs_paginated  # noqa: E402
+from fetch_svr_feed_events import get_logs_paginated # noqa: E402
 
 LENDING_POOL = "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9"
 
@@ -79,104 +79,104 @@ _CHUNK_SIZE = 250_000
 
 _CHECKPOINT_DIR = Path("data/raw/.checkpoints")
 _OUT_PARQUET = Path(
-    "data/raw/corrections/aave_v2_collateral_toggle/chain=1/collateral_toggle.parquet"
+ "data/raw/corrections/aave_v2_collateral_toggle/chain=1/collateral_toggle.parquet"
 )
 
 
-def _chunks() -> list[tuple[int, int]]:
-    bounds = list(range(_MIN_BLOCK, _MAX_BLOCK, _CHUNK_SIZE)) + [_MAX_BLOCK]
-    return [(lo, hi - 1) for lo, hi in zip(bounds[:-1], bounds[1:])]
+def _chunks -> list[tuple[int, int]]:
+ bounds = list(range(_MIN_BLOCK, _MAX_BLOCK, _CHUNK_SIZE)) + [_MAX_BLOCK]
+ return [(lo, hi - 1) for lo, hi in zip(bounds[:-1], bounds[1:])]
 
 
 def _hex_to_int(value: str) -> int:
-    """Etherscan's `getLogs` occasionally returns a bare `"0x"` instead of
-    `"0x0"` for a genuinely-zero field (observed on `logIndex` for the very
-    first log of a tx) -- `int(value, 16)` raises on that, so normalize it
-    to zero explicitly rather than letting a real (zero-valued) row crash
-    the pull."""
-    return int(value, 16) if value not in ("0x", "", None) else 0
+ """Etherscan's `getLogs` occasionally returns a bare `"0x"` instead of
+ `"0x0"` for a genuinely-zero field (observed on `logIndex` for the very
+ first log of a tx) -- `int(value, 16)` raises on that, so normalize it
+ to zero explicitly rather than letting a real (zero-valued) row crash
+ the pull."""
+ return int(value, 16) if value not in ("0x", "", None) else 0
 
 
 def _decode(enabled: bool, logs: list[dict]) -> list[dict]:
-    rows = []
-    for log in logs:
-        rows.append(
-            {
-                "block_number": _hex_to_int(log["blockNumber"]),
-                "log_index": _hex_to_int(log["logIndex"]),
-                "reserve": ("0x" + log["topics"][1][-40:]).lower(),
-                "user": ("0x" + log["topics"][2][-40:]).lower(),
-                "enabled": enabled,
-            }
-        )
-    return rows
+ rows = []
+ for log in logs:
+ rows.append(
+ {
+ "block_number": _hex_to_int(log["blockNumber"]),
+ "log_index": _hex_to_int(log["logIndex"]),
+ "reserve": ("0x" + log["topics"][1][-40:]).lower,
+ "user": ("0x" + log["topics"][2][-40:]).lower,
+ "enabled": enabled,
+ }
+ )
+ return rows
 
 
 def _pull_chunk(enabled: bool, lo: int, hi: int, api_key: str) -> list[dict]:
-    tag = "enabled" if enabled else "disabled"
-    checkpoint = _CHECKPOINT_DIR / f"collateral_toggle_{tag}_{lo}_{hi}.json"
-    if checkpoint.exists():
-        rows: list[dict] = json.loads(checkpoint.read_text())
-        print(f"  {tag} [{lo},{hi}]: {len(rows)} rows (checkpoint)", flush=True)
-        return rows
+ tag = "enabled" if enabled else "disabled"
+ checkpoint = _CHECKPOINT_DIR / f"collateral_toggle_{tag}_{lo}_{hi}.json"
+ if checkpoint.exists:
+ rows: list[dict] = json.loads(checkpoint.read_text)
+ print(f" {tag} [{lo},{hi}]: {len(rows)} rows (checkpoint)", flush=True)
+ return rows
 
-    logs = get_logs_paginated(
-        LENDING_POOL,
-        api_key,
-        from_block=lo,
-        to_block=hi,
-        topic0=_TOPIC0_BY_ENABLED[enabled],
-    )
-    rows = _decode(enabled, logs)
-    _CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
-    checkpoint.write_text(json.dumps(rows))
-    print(f"  {tag} [{lo},{hi}]: {len(rows)} rows (checkpointed)", flush=True)
-    return rows
+ logs = get_logs_paginated(
+ LENDING_POOL,
+ api_key,
+ from_block=lo,
+ to_block=hi,
+ topic0=_TOPIC0_BY_ENABLED[enabled],
+ )
+ rows = _decode(enabled, logs)
+ _CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
+ checkpoint.write_text(json.dumps(rows))
+ print(f" {tag} [{lo},{hi}]: {len(rows)} rows (checkpointed)", flush=True)
+ return rows
 
 
 def _pull_chunk_with_retry(
-    enabled: bool, lo: int, hi: int, api_key: str, attempts: int = 4
+ enabled: bool, lo: int, hi: int, api_key: str, attempts: int = 4
 ) -> list[dict]:
-    for attempt in range(attempts):
-        try:
-            return _pull_chunk(enabled, lo, hi, api_key)
-        except RuntimeError as exc:
-            if attempt == attempts - 1:
-                raise
-            wait = 30 * (attempt + 1)
-            tag = "enabled" if enabled else "disabled"
-            print(f"  retry {tag} [{lo},{hi}] in {wait}s after: {exc}", flush=True)
-            time.sleep(wait)
-    raise AssertionError("unreachable")  # pragma: no cover
+ for attempt in range(attempts):
+ try:
+ return _pull_chunk(enabled, lo, hi, api_key)
+ except RuntimeError as exc:
+ if attempt == attempts - 1:
+ raise
+ wait = 30 * (attempt + 1)
+ tag = "enabled" if enabled else "disabled"
+ print(f" retry {tag} [{lo},{hi}] in {wait}s after: {exc}", flush=True)
+ time.sleep(wait)
+ raise AssertionError("unreachable") # pragma: no cover
 
 
-def main() -> None:
-    api_key = os.environ["ETHERSCAN_API_KEY"]
-    chunks = _chunks()
-    print(
-        f"Pulling ReserveUsedAsCollateralEnabled/Disabled over {len(chunks)} "
-        f"block chunks [{_MIN_BLOCK}, {_MAX_BLOCK}]...",
-        flush=True,
-    )
+def main -> None:
+ api_key = os.environ["ETHERSCAN_API_KEY"]
+ chunks = _chunks
+ print(
+ f"Pulling ReserveUsedAsCollateralEnabled/Disabled over {len(chunks)} "
+ f"block chunks [{_MIN_BLOCK}, {_MAX_BLOCK}]...",
+ flush=True,
+ )
 
-    all_rows: list[dict] = []
-    for enabled in (True, False):
-        for lo, hi in chunks:
-            all_rows.extend(_pull_chunk_with_retry(enabled, lo, hi, api_key))
+ all_rows: list[dict] = []
+ for enabled in (True, False):
+ for lo, hi in chunks:
+ all_rows.extend(_pull_chunk_with_retry(enabled, lo, hi, api_key))
 
-    if not all_rows:
-        raise RuntimeError("No collateral-toggle logs pulled -- nothing to write")
+ if not all_rows:
+ raise RuntimeError("No collateral-toggle logs pulled -- nothing to write")
 
-    df = pd.DataFrame(all_rows).drop_duplicates(subset=["block_number", "log_index"])
-    df["block_number"] = df["block_number"].astype("int64")
-    df["log_index"] = df["log_index"].astype("int32")
-    df = df.sort_values(
-        ["user", "reserve", "block_number", "log_index"], kind="mergesort"
-    ).reset_index(drop=True)
-    _OUT_PARQUET.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(_OUT_PARQUET, index=False)
-    print(f"\nWrote {len(df)} collateral-toggle rows to {_OUT_PARQUET}")
+ df = pd.DataFrame(all_rows).drop_duplicates(subset=["block_number", "log_index"])
+ df["block_number"] = df["block_number"].astype("int64")
+ df["log_index"] = df["log_index"].astype("int32")
+ df = df.sort_values(
+ ["user", "reserve", "block_number", "log_index"], kind="mergesort"
+ ).reset_index(drop=True)
+ _OUT_PARQUET.parent.mkdir(parents=True, exist_ok=True)
+ df.to_parquet(_OUT_PARQUET, index=False)
+ print(f"\nWrote {len(df)} collateral-toggle rows to {_OUT_PARQUET}")
 
 
 if __name__ == "__main__":
-    main()
+ main

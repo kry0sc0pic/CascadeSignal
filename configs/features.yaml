@@ -1,15 +1,15 @@
-# Event/price-only feature-bar builder v0 (CAS-20).
+# Event/price-only feature-bar builder v0.
 # The state-dependent liquidation-wall / HF-distribution features are NOT here
-# -- they moved to CAS-51 (Mock 2, depends on the reconstruction engine).
+# -- they moved to.
 # See src/cascadesignal/features/bars.py for the as-of contract every feature
 # must obey (all inputs strictly < bar end block; enforced by T4 / tests).
 
-bar_blocks: 5  # PLAN §6 "per 5-block bars"
+bar_blocks: 5 # PLAN §6 "per 5-block bars"
 
 # EWMA half-lives for the liquidation-event-history decay features, expressed
 # in BARS. At bar_blocks=5 and ~12s/block a bar is ~60s, so:
-#   60 bars   ~= 1 hour
-#   1440 bars ~= 1 day
+# 60 bars ~= 1 hour
+# 1440 bars ~= 1 day
 ewma_halflife_bars: [60, 1440]
 
 # Trailing window (in bars) for the collateral-HHI feature. 1440 bars ~= 1 day
@@ -23,9 +23,9 @@ vol_halflife_days: 30
 weth_address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 wbtc_address: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
 
-# Mock 1 scope: Aave v2 only (matches configs/labels.yaml).
+#.yaml).
 protocols:
-  - aave_v2
+ - aave_v2
 
 output:
-  dir: data/features
+ dir: data/features
